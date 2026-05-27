@@ -4,7 +4,7 @@ int opcion;
 do
 {
     Console.WriteLine("Seleccione la opcion deseada:\n");
-    Console.Write("1.SUMAR,2.RESTAR,3.MULTIPLICAR,4.DIVIDIR");
+    Console.Write("1.Valor absoluto ,2.Numero al cuadrado,3.Raiz cuadrada,4.Seno de un numero 5.Coseno de un numero, 6.Parte entera de un numero real:");
     string entrada=Console.ReadLine();
     if(!int.TryParse(entrada,out opcion))
     {
@@ -14,7 +14,7 @@ do
     {
         if(opcion!=0)
         {
-            Console.Write("Ingresar un numero entero positivo:\n");
+            Console.Write("Ingresar un numero entero:\n");
             string n=Console.ReadLine();
             double.TryParse(n,out c);
             double r=0;
@@ -22,33 +22,48 @@ do
             {
                 //VALOR ABSOLUTO
                 case 1:
-                Math.Abs(c);
+                r=Math.Abs(c);
                 break;
                 //Cuadrado
                 case 2:
-                Math.Pow(c,2);
+                r=Math.Pow(c,2);
                 break;
                 //LA RAIZ CUADRADA
                 case 3:
-                Math.Sqrt(c);
+                r=Math.Sqrt(c);
                 break;
                 //SENO
                 case 4:
-                Math.Sin(c);
+                r=Math.Sin(c);
                 break;
                 //COSENO
                 case 5:
-                Math.Cos(c);
+                r=Math.Cos(c);
                 break;
                 //PARTE ENTERA DE UN FLOAT
                 case 6:
-                Math.Truncate(c);
+                r=Math.Truncate(c);
                 break;
                 default:
                 Console.Write("Opcion invalida\n");
                 break;
             }
             Console.WriteLine("Resultado:"+r);
+            Console.Write("Ingresar dos numeros enteros:\n");
+            int a,b;
+            string n1=Console.ReadLine();
+            string n2=Console.ReadLine();
+            
+           
+            if(!int.TryParse(n1,out a) || !int.TryParse(n2,out b))
+            {
+                Console.Write("Uno de los numeros es invalido. Intente nuevamente");
+            }
+            else
+            {
+                Console.WriteLine("El numero maximo es: " + Math.Max(a, b));
+                Console.WriteLine("El numero minimo es: " + Math.Min(a, b));
+            }
         }
         else
         {
