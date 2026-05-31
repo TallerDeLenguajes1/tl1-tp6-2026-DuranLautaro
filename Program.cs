@@ -1,5 +1,5 @@
 ﻿// See https://aka.ms/new-console-template for more information
-int a,b,opcion;
+int a,b,opcion,opcion2;
 double c;
 do
 {
@@ -43,12 +43,15 @@ do
             }
             Console.WriteLine("Resultado:"+resultado);
         }
-        Console.Write("1.Valor absoluto ,2.Numero al cuadrado,3.Raiz cuadrada,4.Seno de un numero 5.Coseno de un numero, 6.Parte entera de un numero real:");
-         Console.Write("Ingresar un numero entero:\n");
+        Console.WriteLine("Seleccione la opcion deseada:\n");
+        Console.Write("1.Valor absoluto ,2.Numero al cuadrado,3.Raiz cuadrada,4.Seno de un numero 5.Coseno de un numero, 6.Parte entera de un numero real:\n");
+        string entrada2=Console.ReadLine();
+        int.TryParse(entrada2,out opcion2);
+        Console.Write("Ingresar un numero real:\n");
             string n=Console.ReadLine();
             double.TryParse(n,out c);
             double r=0;
-            switch(opcion)
+            switch(opcion2)
             {
                 //VALOR ABSOLUTO
                 case 1:
@@ -81,11 +84,11 @@ do
             Console.WriteLine("Resultado:"+r);
             Console.Write("Ingresar dos numeros enteros:\n");
             int d,e;
-            string n1=Console.ReadLine();
-            string n2=Console.ReadLine();
+            string n3=Console.ReadLine();
+            string n4=Console.ReadLine();
             
            
-            if(!int.TryParse(n1,out d) || !int.TryParse(n2,out e))
+            if(!int.TryParse(n3,out d) || !int.TryParse(n4,out e))
             {
                 Console.Write("Uno de los numeros es invalido. Intente nuevamente");
             }
